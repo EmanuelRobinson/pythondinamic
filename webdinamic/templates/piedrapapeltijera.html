@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+<body>
+    <h1>Juguemos Piedra, Papel o Tijera ✊📄✂️</h1>
+    <form method="POST">
+        <label>Tu elección:</label>
+        <select name="jugador">
+            <option value="piedra">Piedra</option>
+            <option value="papel">Papel</option>
+            <option value="tijera">Tijera</option>
+        </select><br><br>
+
+        <button type="submit">Jugar</button>
+    </form>
+
+    {% if resultado %}
+        <p><strong>Resultado:</strong> {{ resultado }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Volver al menú</a>
+</body>
+</html>

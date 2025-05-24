@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora 🧮</h1>
+    <form method="POST">
+        <label>Número 1:</label>
+        <input type="text" name="num1"><br>
+
+        <label>Número 2:</label>
+        <input type="text" name="num2"><br>
+
+        <label>Operación:</label>
+        <select name="operacion">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <p><strong>Resultado:</strong> {{ resultado }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Volver al menú</a>
+</body>
+</html>
